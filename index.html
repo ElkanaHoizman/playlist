@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <title id="yourElementId">Playlists</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/playlists.js"></script>
+    <script src="js/player.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/app.css">
+  </head>
+  <body>
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">playlist</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" data-toggle="modal" data-target="#new_playlist">
+          <a class="nav-link" href="#"><i class="fa fa-plus-circle" data-toggle="modal" data-target="#new_playlist"></i>
+            <span class="sr-only">(current)</span>add new playlist
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" id="Search" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div id "player" class="player" >
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- The Modal delete -->
+    <div class="modal fade" id="Modal_delete">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">"Are you Sure??"</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn btn-danger" data-dismiss="modal">Delete</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    <!-- The Modal add new playlist-->
+    <div class="modal fade playlist" id="new_playlist">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header  New">
+            <h4 class="modal-title">Add New Playlist</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body New">
+             <form action="">
+              <div class="form-group">
+                <label for="Playlist New"> Playlist New:</label>
+                <br>
+                <input type="text" class="form Playlist_New" id="Playlist New" placeholder="Playlist New" name="Playlist New">
+              </div>
+              <div class="form-group  New">
+                  <label for="Playlist URL">Playlist URL:</label>
+                  <br>
+                  <input type="text" class="form Playlist_URL" id="Playlist URL" placeholder="Playlist URL" name="Playlist URL">
+                </div>
+                <br>
+                <!-- <button type="text" class="btn btn-primary next" >Next</button>&nbsp;&nbsp;&nbsp; -->
+                <input class="btn btn-primary reset" type="reset" value="RESET FIELDS">
+              </form>
+              <button type="text" class="btn btn-primary next">Next</button>&nbsp;&nbsp;&nbsp;
+              <div class="img_new">
+              
+              </div>
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer  New">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+          <!-- The Modal add playlist Songs-->
+          <!-- Modal Header -->
+          <div class="modal-header New_Songs ">
+            <h4 class="modal-title">Add Playlist Songs</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <br>
+          
+          <!-- Modal body -->
+          <div class="form-group New_Songs URL">
+            <label for="Song URL">Song URL:</label>
+              <!-- <input type="url" class="form Song URL_1 " placeholder="Song URL" name="website" pattern="https?://.+" title="Include http://"> -->
+            
+              <input type="text"  data-num=1 class="form  Song URL_0   validat" placeholder="Song URL mp3" name="Song URL" >
+              <label for="Name URL">Name:</label>
+              <input type="text" class="form  Name_URL_0 " placeholder="Name" name="Name URL">
+          </div>
+         
+          <div class="add"></div>
+          <div class="form-group New_Songs ">
+            <br>
+            <i class="fa fa-plus-circle Add song">&nbsp;&nbsp;Add ahother song</i>
+            <button type="text" class="btn btn-primary SAVE create">FINISH & SAVE</button>
+          </div>
+          <br>
+          <!-- Modal footer -->
+          <div class="modal-footer New_Songs">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+    
+        </div>
+      </div>
+    </div>
+    <!-- The Modal edit playlist-->
+    <div class="modal fade playlist" id="edit_playlist">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header edit">
+            <h4 class="modal-title"> edit Playlist</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body edit display">
+           
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer edit">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+
+          <!-- The Modal add playlist Songs-->
+          <!-- Modal Header -->
+          <div class="modal-header edit_Songs">
+            <h4 class="modal-title">Edit Playlist Songs</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <br>
+          
+          <!-- Modal body -->
+          <div class="append">
+            <div class="Editing_songs edit_Songs">
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer edit_Songs">
+            <button type="text" class="btn btn-primary SAVE SAVE_edit">FINISH & SAVE</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+   
+  </body>
+</html>
